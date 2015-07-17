@@ -30,7 +30,7 @@ definition(
 
 preferences {
 	section("1. Choose your pet feeder sensor.") {
-		input "feeder1", "capability.contactSensor", title: "Sensor:", required: true
+		input "feeder", "capability.contactSensor", title: "Sensor:", required: true
 	}
 	section("2. Specify when you feed your pets.") {
 		input "timefrom", "time", title: "Between:", required: true
@@ -60,7 +60,7 @@ def scheduleCheck()
 
 	def from = new Date(timefrom)
 	def now = new Date()
-	def feederEvents = feeder1.eventsBetween(midnight, now)
+	def feederEvents = feeder.eventsBetween(from, now)
 	log.trace "Found ${feederEvents?.size() ?: 0} feeder events since $timefrom"
 	def feederOpened = feederEvents.count { it.value && it.value == "open" } > 0
 
