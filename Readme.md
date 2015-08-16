@@ -13,3 +13,7 @@ Complete list of custom actions and their descriptions:
  ### Coming ang Going (`coming-and-going.groovy`)
  
  Allows you to receive a notification or text message whenever someone arrives or departs between a set time. For example, you can be alerted if your child arrives home after 11pm.
+ 
+ ### Door Left Open Alert (`door-left-open-alert.groovy`)
+ 
+ Alerts you with a custom message if you've left a door/window (contact sensor) open after a configurable number of minutes.
